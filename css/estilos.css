@@ -43,9 +43,62 @@ a { text-decoration: none;}
 }
 
 .topo { 
-    background-color: yellow;
-    height: 12vh;
+    height: 12vh; /* Temporariamente */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.titulo-menu a {
+    color: var(--cor-escura);
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: inline-block;
+}
+
+.menu a:hover, .menu a:focus {
+    background-color: var(--cor-intermediaria);
+}
+
+/* Estilos para lista ul contida no menu nav */
+.links-menu {  
+    /* Atenção! Neste ponto, fazemos com que os links do menu iniciem escondidos (displey:none) em telas pequenas. Posteriormente, com JS, faremos os comandos necessario para exibir/esconder de forma alternada. */
+    display: none;
+}
+
+a { 
+    color: var(--cor-escura);
+    font-weight: bold;
+    /* background-color: yellow; */
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links-menu.aberto { 
+    /* Usamos para desfazer o display:none  */
+    display: flex;
+
+    /* para colocar em coluna */
+    flex-direction: column;
+
+    /* para ajustar a posição final */
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: var(--cor-clara);
+}
+
+.destaque { 
+    background-image: url(../imagens/fundo-destaque.jpg);
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2, p { color: white; display: inline;}
+}
+
+
