@@ -1,22 +1,34 @@
-*, *::after, *::before { box-sizing: border-box;}
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
 
 :root {
     --cor-titulo: #4d4d4d;
-    --cor-texto: #333; 
+    --cor-texto: #333;
     --cor-escura: #000;
-    --cor-clara: #fff; 
+    --cor-clara: #fff;
     --cor-intermediaria: #ececec;
 }
 
-body, h1, h2, p, figure, .links-menu { 
+body,
+h1,
+h2,
+p,
+figure,
+.links-menu {
     margin: 0;
     padding: 0;
-    list-style: none; /* remover macação de lista  */
+    list-style: none;
+    /* remover macação de lista  */
 
 }
 
 /*  Impportante para uso de medidas relativas REM */
-html { font-size: 16px; }
+html {
+    font-size: 16px;
+}
 
 body {
     font-family: "Noto Sans", sans-serif;
@@ -24,30 +36,35 @@ body {
 
 }
 
-img { max-width: 100%; }
+img {
+    max-width: 100%;
+}
 
-a { text-decoration: none;} 
+a {
+    text-decoration: none;
+}
 
-.titulo { 
+.titulo {
     font-family: Raleway, sans-serif;
     text-transform: uppercase;
     font-weight: 800;
     font-size: 1.5rem;
 
-    a{
-    background-color: var(--cor-escura);
-    color: var(--cor-clara);
-    padding: 0.3rem 1rem;
-    border-radius: 4px;
-}
+    a {
+        background-color: var(--cor-escura);
+        color: var(--cor-clara);
+        padding: 0.3rem 1rem;
+        border-radius: 4px;
+    }
 }
 
-.topo { 
-    height: 12vh; /* Temporariamente */
+.topo {
+    height: 12vh;
+    /* Temporariamente */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 .titulo-menu a {
@@ -57,17 +74,18 @@ a { text-decoration: none;}
     display: inline-block;
 }
 
-.menu a:hover, .menu a:focus {
+.menu a:hover,
+.menu a:focus {
     background-color: var(--cor-intermediaria);
 }
 
 /* Estilos para lista ul contida no menu nav */
-.links-menu {  
+.links-menu {
     /* Atenção! Neste ponto, fazemos com que os links do menu iniciem escondidos (displey:none) em telas pequenas. Posteriormente, com JS, faremos os comandos necessario para exibir/esconder de forma alternada. */
     display: none;
 }
 
-a { 
+a {
     color: var(--cor-escura);
     font-weight: bold;
     /* background-color: yellow; */
@@ -77,7 +95,7 @@ a {
     align-items: center;
 }
 
-.links-menu.aberto { 
+.links-menu.aberto {
     /* Usamos para desfazer o display:none  */
     display: flex;
 
@@ -91,7 +109,7 @@ a {
     background-color: var(--cor-clara);
 }
 
-.destaque { 
+.destaque {
     background-image: url(../imagens/fundo-destaque.jpg);
     height: 88vh;
     display: flex;
@@ -100,12 +118,25 @@ a {
     align-items: center;
     background-attachment: fixed;
 
-    h2, p { color: var(--cor-clara); display: inline; text-align: center; }
+    h2,
+    p {
+        color: var(--cor-clara);
+        display: inline;
+        text-align: center;
+        animation-name: animaDestaque;
+        animation-duration: .5s;
+    }
 
 
-    h2 { font-size: clamp(3rem, 10vw, 7rem);}
+    h2 {
+        font-size: clamp(3rem, 10vw, 7rem);
+    }
 
-    p { font-size: clamp(1,5rem, 3vw, 3rem);}
+    p {
+        font-size: clamp(1, 5rem, 3vw, 3rem);
+        animation-delay: .5s;
+        animation-fill-mode: backwards;
+    }
 }
 
 /*  Sobre a função clamp() 
@@ -115,3 +146,42 @@ Função útil para redimensionamento responsivo de acordo com criterios de tama
 clamp(
 )
 */
+
+@keyframes animaDestaque {
+    font {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    to {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+
+article {
+    h2 {
+        padding: 1rem;
+        font-size: 1.4rem;
+        font-family: Raleway, sans-serif;
+        color: var(--cor-titulo);
+    }
+
+    p {
+        padding: .5rem 0;
+        font-size: 1.2rem;
+    }
+
+    address { 
+        font-size: 1.2rem;
+        font-style: normal;
+    }
+}
+
+.front-end,
+.historia,
+.localizacao {
+    text-align: center;
+
+}
