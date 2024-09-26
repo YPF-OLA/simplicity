@@ -47,6 +47,7 @@ a { text-decoration: none;}
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .titulo-menu a {
@@ -97,8 +98,11 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-attachment: fixed;
 
-    h2, p { color: white; display: inline;}
+    h2, p { color: var(--cor-clara); display: inline; text-align: center; }
+    h2 { font-size: 50px;}
+    p { font-size: 29px;}
 }
 
 
