@@ -101,8 +101,17 @@ a {
     background-attachment: fixed;
 
     h2, p { color: var(--cor-clara); display: inline; text-align: center; }
-    h2 { font-size: 50px;}
-    p { font-size: 29px;}
+
+
+    h2 { font-size: clamp(3rem, 10vw, 7rem);}
+
+    p { font-size: clamp(1,5rem, 3vw, 3rem);}
 }
 
+/*  Sobre a função clamp() 
+Função útil para redimensionamento responsivo de acordo com criterios de tamahos mínimos, ideal/ variável/responsivo e máximo. Uso mais comum é para textos responsivos, mas pode ser usada com qualquer propriedade que envolva tamanhos (width, height etc..)
 
+
+clamp(
+)
+*/
