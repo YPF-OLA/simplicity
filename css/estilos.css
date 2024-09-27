@@ -59,19 +59,19 @@ a {
 }
 
 .topo {
-   
-    
+
+    z-index: 10;
     background-color: var(--cor-clara);
     position: sticky;
     top: 0;
 
-/*  Classe .limitador especifica para uso no cabeçalho/.topo: além das configurações gerais (width e margin), Aqui ela tambem tem altura e ajuste do flex */
-.limitador {
-     height: 12vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    /*  Classe .limitador especifica para uso no cabeçalho/.topo: além das configurações gerais (width e margin), Aqui ela tambem tem altura e ajuste do flex */
+    .limitador {
+        height: 12vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
 
 }
@@ -101,17 +101,19 @@ a {
 .links-menu {
     /* Atenção! Neste ponto, fazemos com que os links do menu iniciem escondidos (displey:none) em telas pequenas. Posteriormente, com JS, faremos os comandos necessario para exibir/esconder de forma alternada. */
     display: none;
+
+    a {
+        color: var(--cor-escura);
+        font-weight: bold;
+        /* background-color: yellow; */
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-a {
-    color: var(--cor-escura);
-    font-weight: bold;
-    /* background-color: yellow; */
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .links-menu.aberto {
     /* Usamos para desfazer o display:none  */
@@ -191,7 +193,7 @@ article {
         font-size: 1.2rem;
     }
 
-    address { 
+    address {
         font-size: 1.2rem;
         font-style: normal;
     }
@@ -204,80 +206,112 @@ article {
 
 }
 
-.historia { 
+.historia {
     background-image: url(../imagens/fundo-madeira.jpg);
     background-attachment: fixed;
-    
+
     h2 {
-         color: var(--cor-clara);
-         font-size: 30px;
-         text-shadow: 2px 2px 4px ;
-        }
-iframe { 
-    width: 100%;
-    margin-bottom: 2rem;
-    max-width: 700px;
-}
+        color: var(--cor-clara);
+        font-size: 30px;
+        text-shadow: 2px 2px 4px;
+    }
+
+    iframe {
+        width: 100%;
+        margin-bottom: 2rem;
+        max-width: 700px;
+    }
 }
 
-.localizacao { 
+.localizacao {
     iframe {
-    width: 100%;
-    margin-top: 2rem;}
+        width: 100%;
+        margin-top: 2rem;
+    }
 }
 
 footer {
     background-color: var(--cor-escura);
     height: 30vh;
-    display: flex;                  
-    justify-content: center;        
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    p { color: var(--cor-clara); font-weight: bold;}
+
+    p {
+        color: var(--cor-clara);
+        font-weight: bold;
+    }
 }
 
 /* Paginas de produtos */
 
-.conteudo-interno { 
+.conteudo-interno {
     background-color: var(--cor-intermediaria);
     padding: .5rem;
     border-radius: 8px;
 
     h2 {
-         padding-left: 0;
-         font-size: 1.8rem;
-        }
+        padding-left: 0;
+        font-size: 1.8rem;
+    }
 }
 
- 
-table{ 
+
+table {
     border: solid 4px;
     width: 80%;
     max-width: 600px;
     margin: auto;
     border-collapse: collapse;
 }
- caption {
+
+caption {
     text-transform: uppercase;
     font-size: 1.2rem;
     padding-bottom: .3rem;
- }
+}
 
- th, td { border: solid 1px var(--cor-escura);}
+th,
+td {
+    border: solid 1px var(--cor-escura);
+}
 
- th { 
+th {
     background-color: var(--cor-escura);
     color: var(--cor-clara);
     padding: .5rem;
 }
 
-td { padding: .4rem;}
+td {
+    padding: .4rem;
+}
 
-td:nth-child(2) { text-align: center;}
+td:nth-child(2) {
+    text-align: center;
+}
 
-td:last-child, th:last-child { text-align: right;}
+td:last-child,
+th:last-child {
+    text-align: right;
+}
 
-tr:nth-child(even) { background-color: var(--cor-intermediaria);}
+tr:nth-child(even) {
+    background-color: var(--cor-intermediaria);
+}
 
 
+.galeria {
+    text-align: center;
 
+    img {
+        border-radius: 100px;
+        box-shadow: var(--cor-escura)0 0 30px;
+        transition: transform 0.5s
+        
+    }
+
+    img:hover {
+        transform: scale(1.2) rotate(30deg);
+    }
+}
