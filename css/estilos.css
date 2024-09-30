@@ -305,6 +305,7 @@ tr:nth-child(even) {
     text-align: center;
 
     img {
+        margin: 20px;
         border-radius: 100px;
         box-shadow: var(--cor-escura)0 0 30px;
         transition: transform 0.5s
@@ -314,4 +315,19 @@ tr:nth-child(even) {
     img:hover {
         transform: scale(1.2) rotate(30deg);
     }
+}
+
+@media screen and (min-width: 600px) {
+    .titulo-menu { display: none;}
+    .links-menu {  
+        display: flex;
+        li { width: 100%;}
+    }
+    .menu { width: 60%;}
+}
+
+@media screen and (min-width: 1000px) {
+    html { font-size: 18px; }
+    .limitador { max-width: 1000px}
+    
 }
