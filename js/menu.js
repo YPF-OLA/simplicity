@@ -11,7 +11,7 @@ botaoMenu.addEventListener("click", function( event ){
     listasDeLinks.classList.toggle("aberto")
 
     if(listasDeLinks.classList.contains("aberto")){
-        botaoMenu.innerHTML = "Fechar &timer;";
+        botaoMenu.innerHTML = "Fechar &times;";
     }else {
         botaoMenu.innerHTML = "Menu &equiv;";
     }
