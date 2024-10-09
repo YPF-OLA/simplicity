@@ -9,5 +9,11 @@ botaoMenu.addEventListener("click", function( event ){
     event.preventDefault();
     
     listasDeLinks.classList.toggle("aberto")
+
+    if(listasDeLinks.classList.contains("aberto")){
+        botaoMenu.innerHTML = "Fechar &timer;";
+    }else {
+        botaoMenu.innerHTML = "Menu &equiv;";
+    }
     
 });
